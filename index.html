@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Блик — окна, двери, потолки в Михайловке</title>
+<meta name="description" content="Компания Блик: пластиковые окна, двери, натяжные потолки, сайдинг, заборы, кондиционеры в Михайловке. Рассрочка без банков и процентов.">
+<style>
+:root{
+  --red:#e3262b; --red-d:#b81c20;
+  --bg:#0f0f10; --bg2:#17181a; --card:#1d1e21; --line:#2c2d31;
+  --text:#f2f2f3; --muted:#a3a5ab; --white:#fff;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:"Segoe UI",Roboto,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.55}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+.wrap{max-width:1180px;margin:0 auto;padding:0 18px}
+section{padding:72px 0}
+h1,h2,h3{line-height:1.2}
+h2{font-size:clamp(26px,4vw,38px);margin-bottom:10px}
+.sub{color:var(--muted);max-width:680px;margin-bottom:34px}
+.btn{display:inline-block;background:var(--red);color:#fff;border:0;border-radius:8px;padding:13px 26px;font-size:16px;font-weight:600;cursor:pointer;transition:.2s}
+.btn:hover{background:var(--red-d);transform:translateY(-2px)}
+.btn.ghost{background:transparent;border:2px solid #fff}
+.btn.ghost:hover{background:#fff;color:#000}
+
+/* шапка */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(15,15,16,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo img{height:46px;display:block}
+.menu{display:flex;gap:22px;align-items:center}
+.menu a{font-size:15px;color:#ddd}
+.menu a:hover{color:var(--red)}
+.hphone{font-weight:700;white-space:nowrap}
+.burger{display:none;background:none;border:0;color:#fff;font-size:30px;cursor:pointer}
+
+/* первый экран */
+.hero{min-height:100vh;display:flex;align-items:center;text-align:center;padding-top:90px;
+ background:radial-gradient(ellipse at 20% 10%,rgba(227,38,43,.28),transparent 55%),radial-gradient(ellipse at 90% 90%,rgba(255,255,255,.07),transparent 50%),linear-gradient(160deg,#050505,#1a1b1e)}
+.hero h1{font-size:clamp(32px,6vw,62px);text-transform:uppercase;letter-spacing:1px;margin-bottom:18px}
+.hero p{color:#c9cbd0;max-width:640px;margin:0 auto 30px;font-size:18px}
+.hero .btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.badges{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:46px}
+.badge{background:rgba(255,255,255,.07);border:1px solid var(--line);border-radius:12px;padding:12px 20px;font-size:15px}
+.badge b{color:var(--red);font-size:20px;display:block}
+
+/* услуги */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px;transition:.25s}
+.card:hover{border-color:var(--red);transform:translateY(-4px)}
+.card .ic{font-size:34px;margin-bottom:10px}
+.card h3{margin-bottom:6px;font-size:20px}
+.card p{color:var(--muted);font-size:15px}
+.card .go{color:var(--red);font-weight:600;margin-top:12px;display:inline-block;font-size:14px}
+
+/* рассрочка */
+.promo{background:linear-gradient(135deg,var(--red-d),var(--red));border-radius:18px;padding:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:26px;align-items:center}
+.promo h2{margin-bottom:8px}
+.promo .or{background:#fff;color:#111;border-radius:14px;padding:22px;text-align:center}
+.promo .or b{font-size:44px;color:var(--red);display:block;line-height:1}
+.promo small{opacity:.85}
+
+/* каталог */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px}
+.tab{background:var(--card);color:#ddd;border:1px solid var(--line);border-radius:30px;padding:9px 18px;cursor:pointer;font-size:15px}
+.tab.on{background:var(--red);border-color:var(--red);color:#fff}
+.price-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:10px}
+.item h4{font-size:18px}
+.item .d{color:var(--muted);font-size:14px}
+.item .pr{font-size:24px;font-weight:700;color:var(--red)}
+.item .pr small{font-size:13px;color:var(--muted);font-weight:400}
+.item button{align-self:flex-start;background:transparent;border:1px solid var(--red);color:var(--red);border-radius:8px;padding:7px 14px;cursor:pointer;font-size:14px}
+.item button:hover{background:var(--red);color:#fff}
+.note{color:var(--muted);font-size:14px;margin-top:18px}
+.tag{display:inline-block;background:var(--red);color:#fff;font-size:12px;border-radius:5px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+.extra{margin-top:22px;background:var(--bg2);border:1px solid var(--line);border-radius:14px;padding:20px}
+.extra ul{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin-top:10px}
+.extra li{background:var(--card);border-radius:20px;padding:6px 14px;font-size:14px}
+
+/* каталог дверей */
+.dtools{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.dtools input,.dtools select{width:auto;flex:1 1 200px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{background:var(--card);color:#ddd;border:1px solid var(--line);border-radius:30px;padding:7px 15px;cursor:pointer;font-size:14px}
+.chip.on{background:#fff;color:#000;border-color:#fff}
+.dgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:16px}
+.dcard{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;transition:.25s;cursor:pointer}
+.dcard:hover{border-color:var(--red);transform:translateY(-4px)}
+.dcard .ph{background:#fff;height:250px;display:flex;align-items:center;justify-content:center}
+.dcard .ph img{max-height:100%;max-width:100%;object-fit:contain}
+.dcard .in{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1;justify-content:space-between}
+.dcard h4{font-size:15px;font-weight:600}
+.dcard .pr{font-size:21px;font-weight:700;color:var(--red)}
+.dcard .pr small{font-size:13px;color:var(--muted);font-weight:400}
+.more{text-align:center;margin-top:24px}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.8);z-index:100;display:none;align-items:center;justify-content:center;padding:16px}
+.modal.open{display:flex}
+.mbox{background:var(--bg2);border:1px solid var(--line);border-radius:16px;max-width:860px;width:100%;max-height:92vh;overflow:auto;display:grid;grid-template-columns:1fr 1fr;position:relative}
+.mbox .mph{background:#fff;display:flex;align-items:center;justify-content:center;padding:10px;min-height:300px}
+.mbox .mph img{max-width:100%;max-height:70vh;object-fit:contain}
+.mbox .mtx{padding:24px}
+.mbox ul{margin:12px 0 18px 18px;color:#cfd0d4;font-size:14px}
+.mx{position:absolute;right:10px;top:6px;background:none;border:0;color:#333;font-size:32px;cursor:pointer;z-index:2}
+@media(max-width:700px){.mbox{grid-template-columns:1fr}.dcard .ph{height:210px}}
+
+/* калькулятор */
+.calc{background:var(--bg2);border:1px solid var(--line);border-radius:18px;padding:30px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+label{display:block;font-size:14px;color:var(--muted);margin:14px 0 6px}
+select,input,textarea{width:100%;background:var(--card);color:#fff;border:1px solid var(--line);border-radius:8px;padding:12px;font-size:16px;font-family:inherit}
+select:focus,input:focus,textarea:focus{outline:2px solid var(--red);border-color:transparent}
+.result{background:var(--card);border-radius:14px;padding:26px;display:flex;flex-direction:column;justify-content:center;text-align:center}
+.result .sum{font-size:clamp(34px,5vw,50px);font-weight:800;color:var(--red);margin:8px 0}
+.result .hint{color:var(--muted);font-size:14px;margin-bottom:16px}
+.hidden{display:none}
+
+/* отзывы */
+.rating{display:flex;align-items:center;gap:14px;margin-bottom:26px}
+.rating .big{font-size:54px;font-weight:800;color:var(--red)}
+.stars{color:var(--red);letter-spacing:3px;font-size:20px}
+.reviews{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:16px}
+.rev{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+.rev .who{display:flex;justify-content:space-between;margin-bottom:8px;font-weight:600}
+.rev .who span{color:var(--muted);font-weight:400;font-size:13px}
+.rev p{font-size:15px;color:#d5d6da}
+
+/* вопросы */
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+summary{cursor:pointer;padding:16px 20px;font-weight:600;list-style:none;display:flex;justify-content:space-between}
+summary::after{content:"+";color:var(--red);font-size:22px}
+details[open] summary::after{content:"–"}
+details p{padding:0 20px 18px;color:var(--muted)}
+
+/* контакты */
+.contacts{display:grid;grid-template-columns:1fr 1fr;gap:28px}
+.addr{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin-bottom:12px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+.addr a{color:var(--red);font-weight:600;font-size:14px}
+.phones a{display:block;font-size:26px;font-weight:800;margin:4px 0}
+.msgs{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.msgs a{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 18px}
+.msgs a:hover{border-color:var(--red)}
+form{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:24px}
+form .btn{width:100%;margin-top:18px}
+.msg-ok{color:#7ddc8c;margin-top:10px;font-size:14px}
+
+footer{border-top:1px solid var(--line);padding:30px 0;color:var(--muted);font-size:14px;text-align:center}
+
+/* плавающие кнопки */
+.fab{position:fixed;right:16px;bottom:16px;z-index:40;display:flex;flex-direction:column;gap:10px}
+.fab a,.fab button{width:54px;height:54px;border-radius:50%;border:0;background:var(--red);color:#fff;font-size:24px;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 14px rgba(0,0,0,.5);cursor:pointer}
+.fab .up{background:#33353a;opacity:0;pointer-events:none;transition:.3s}
+.fab .up.show{opacity:1;pointer-events:auto}
+
+.reveal{opacity:0;transform:translateY(24px);transition:.7s}
+.reveal.in{opacity:1;transform:none}
+
+@media(max-width:860px){
+  .menu{position:fixed;top:68px;left:0;right:0;background:var(--bg);flex-direction:column;padding:20px;gap:18px;border-bottom:1px solid var(--line);display:none}
+  .menu.open{display:flex}
+  .burger{display:block}
+  .hphone{display:none}
+  .promo,.calc,.contacts{grid-template-columns:1fr}
+  section{padding:52px 0}
+}
+</style>
+</head>
+<body>
+
+<header>
+ <div class="wrap nav">
+  <a class="logo" href="#top"><img src="logo-bez-fona.png" alt="Блик"></a>
+  <nav class="menu" id="menu">
+   <a href="#services">Услуги</a>
+   <a href="#prices">Цены</a>
+   <a href="#doors">Двери</a>
+   <a href="#calc">Калькулятор</a>
+   <a href="#installment">Рассрочка</a>
+   <a href="#reviews">Отзывы</a>
+   <a href="#faq">Вопросы</a>
+   <a href="#contacts">Контакты</a>
+  </nav>
+  <a class="hphone" href="tel:+79610643939">8-961-064-39-39</a>
+  <button class="burger" id="burger" aria-label="Меню">☰</button>
+ </div>
+</header>
+
+<main id="top">
+<section class="hero">
+ <div class="wrap">
+  <h1>Ваш комфорт начинается здесь</h1>
+  <p>Окна, двери, потолки, сайдинг и заборы в Михайловке. Рассрочка без банков и процентов.</p>
+  <div class="btns">
+   <a class="btn" href="#contacts">Записаться на замер</a>
+   <a class="btn ghost" href="tel:+79610643939">Позвонить</a>
+   <a class="btn ghost" href="#calc">Посчитать стоимость</a>
+  </div>
+  <div class="badges">
+   <div class="badge"><b>4.9</b>на Яндекс Картах</div>
+   <div class="badge"><b>46</b>отзывов</div>
+   <div class="badge"><b>0 %</b>рассрочка без банков</div>
+   <div class="badge"><b>3</b>точки: Михайловка, Даниловка, Кумылженская</div>
+  </div>
+ </div>
+</section>
+
+<section id="services">
+ <div class="wrap">
+  <h2 class="reveal">Что мы делаем</h2>
+  <p class="sub reveal">Всё для дома в одном месте: от замера до установки.</p>
+  <div class="grid">
+   <div class="card reveal"><div class="ic">🪟</div><h3>Пластиковые окна</h3><p>Окна разных размеров. Москитная сетка в подарок.</p><a class="go" href="#prices" data-tab="okna">Смотреть цены →</a></div>
+   <div class="card reveal"><div class="ic">🚪</div><h3>Двери</h3><p>Металлические и межкомнатные. Есть двери с терморазрывом.</p><a class="go" href="#doors">Смотреть каталог →</a></div>
+   <div class="card reveal"><div class="ic">💡</div><h3>Натяжные потолки</h3><p>Световые линии, резные, трековое освещение, многоуровневые, фотопечать.</p><a class="go" href="#prices" data-tab="potolki">Смотреть цены →</a></div>
+   <div class="card reveal"><div class="ic">🏠</div><h3>Сайдинг и утепление</h3><p>Отделка и утепление домов под ключ, с материалами и работой.</p><a class="go" href="#prices" data-tab="sayding">Смотреть цены →</a></div>
+   <div class="card reveal"><div class="ic">🧱</div><h3>Заборы из профлиста</h3><p>Заборы под ключ. Окрашенный профиль.</p><a class="go" href="#prices" data-tab="zabory">Смотреть цены →</a></div>
+   <div class="card reveal"><div class="ic">❄️</div><h3>Кондиционеры</h3><p>Продажа сплит-систем. Монтаж, чистка, ремонт, заправка.</p><a class="go" href="#prices" data-tab="split">Смотреть цены →</a></div>
+   <div class="card reveal"><div class="ic">🛠️</div><h3>Сопутствующие услуги</h3><p>Рольставни, жалюзи, шторы, откосы, москитные сетки.</p><a class="go" href="#prices" data-tab="extra">Подробнее →</a></div>
+   <div class="card reveal"><div class="ic">🧩</div><h3>Межкомнатные перегородки</h3><p>Узнайте стоимость по телефону.</p><a class="go" href="#contacts">Связаться →</a></div>
+  </div>
+ </div>
+</section>
+
+<section id="installment" style="background:var(--bg2)">
+ <div class="wrap">
+  <div class="promo reveal">
+   <div>
+    <h2>Рассрочка без банков и процентов</h2>
+    <p>Покупайте окна, двери и потолки сейчас, а платите частями. Никаких банков и переплат.</p>
+    <p style="margin-top:12px"><small>Подробности и сроки акции уточняйте у менеджеров салона.</small></p>
+   </div>
+   <div class="or">
+    <div>или</div>
+    <b>скидка 10%</b>
+    <div style="margin-top:8px">при оплате сразу</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="prices">
+ <div class="wrap">
+  <h2 class="reveal">Цены</h2>
+  <p class="sub reveal">Цены указаны с максимальной скидкой. Точную стоимость назовёт менеджер после замера.</p>
+  <div class="tabs" id="tabs"></div>
+  <div class="price-list" id="list"></div>
+  <p class="note" id="tabnote"></p>
+ </div>
+</section>
+
+<section id="doors">
+ <div class="wrap">
+  <h2 class="reveal">Каталог дверей</h2>
+  <p class="sub reveal">Металлические и межкомнатные двери. Нажмите на дверь, чтобы увидеть подробности.</p>
+  <div class="tabs" id="dtabs">
+   <button class="tab on" data-k="metal">Металлические</button>
+   <button class="tab" data-k="inter">Межкомнатные</button>
+  </div>
+  <div class="dtools">
+   <input id="dq" type="search" placeholder="Поиск по названию">
+   <select id="dsort"><option value="">Сначала как в каталоге</option><option value="asc">Сначала дешёвые</option><option value="desc">Сначала дорогие</option></select>
+  </div>
+  <div class="chips" id="dchips"></div>
+  <div class="dgrid" id="dgrid"></div>
+  <div class="more"><button class="btn ghost hidden" id="dmore">Показать ещё</button></div>
+  <p class="note" id="dnote"></p>
+ </div>
+</section>
+
+<div class="modal" id="modal">
+ <div class="mbox">
+  <button class="mx" id="mx" aria-label="Закрыть">×</button>
+  <div class="mph"><img id="mimg" alt=""></div>
+  <div class="mtx">
+   <h3 id="mname"></h3>
+   <div class="pr" id="mprice" style="font-size:28px;font-weight:800;color:var(--red);margin:10px 0"></div>
+   <ul id="mspecs"></ul>
+   <a class="btn" href="#contacts" id="mbuy">Заказать</a>
+  </div>
+ </div>
+</div>
+
+<section id="calc" style="background:var(--bg2)">
+ <div class="wrap">
+  <h2 class="reveal">Калькулятор стоимости</h2>
+  <p class="sub reveal">Примерный расчёт по ценам из нашего прайса. Окончательную цену назовёт менеджер.</p>
+  <div class="calc reveal">
+   <div>
+    <label for="ctype">Что считаем?</label>
+    <select id="ctype">
+     <option value="okno">Пластиковые окна</option>
+     <option value="dver">Двери</option>
+     <option value="potolok">Натяжной потолок</option>
+     <option value="sayding">Отделка сайдингом</option>
+     <option value="zabor">Забор из профлиста</option>
+    </select>
+    <div id="cfields"></div>
+   </div>
+   <div class="result">
+    <div>Примерная стоимость</div>
+    <div class="sum" id="csum">0 ₽</div>
+    <div class="hint" id="chint"></div>
+    <a class="btn" href="#contacts" id="cgo">Заказать расчёт</a>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="reviews">
+ <div class="wrap">
+  <h2 class="reveal">Отзывы клиентов</h2>
+  <div class="rating reveal">
+   <div class="big">4.9</div>
+   <div><div class="stars">★★★★★</div><div style="color:var(--muted)">46 отзывов на Яндекс Картах</div></div>
+  </div>
+  <div class="reviews">
+   <div class="rev reveal"><div class="who">Glow<span>26 июня</span></div><p>Заказал окна и двери в квартире на замену старых. Компания сработала быстро — замерщик приехал вовремя, монтажники сделали всё аккуратно и чисто. Никаких косяков замечено не было. Очень доволен результатом! Рекомендую!</p></div>
+   <div class="rev reveal"><div class="who">Лилия Боловинцева<span>14 мая</span></div><p>Решили заменить старые деревянные окна на новые пластиковые. Остались довольны выбором! Окна отлично держат тепло зимой и прохладу летом. Монтажники работали быстро и аккуратно, никаких претензий нет. Рекомендую!</p></div>
+   <div class="rev reveal"><div class="who">artem tarasov<span>7 июня</span></div><p>Изготовили отличные окна, установку провели оперативно. Теперь полный порядок в квартире. Будем обращаться ещё.</p></div>
+   <div class="rev reveal"><div class="who">Исламм Бос<span>5 мая</span></div><p>Перед покупкой сомневался, нужен ли пластик, ведь многие жалуются на запах и плохое проветривание. Оказалось зря переживал, окна действительно качественные, воздухообмен хороший, шума нет совсем. Сама установка прошла без происшествий, молодцы парни!</p></div>
+  </div>
+ </div>
+</section>
+
+<section id="faq" style="background:var(--bg2)">
+ <div class="wrap" style="max-width:820px">
+  <h2 class="reveal">Вопросы и ответы</h2>
+  <p class="sub reveal">То, что спрашивают чаще всего.</p>
+  <details><summary>Есть ли рассрочка?</summary><p>Да. Рассрочка без банков и процентов. Или скидка 10%. Подробности и сроки акции уточняйте у менеджеров салона.</p></details>
+  <details><summary>Что входит в цену окна?</summary><p>В подарок идёт москитная сетка. Подоконник и отлив в цену не входят. Стоимость монтажа уточняйте у менеджеров.</p></details>
+  <details><summary>Ваши цены окончательные?</summary><p>Цены в прайсе указаны с максимальной скидкой. Для точного расчёта менеджер сделает замер.</p></details>
+  <details><summary>Что входит в цену сайдинга?</summary><p>Цена указана под ключ: с материалами и работой.</p></details>
+  <details><summary>Монтаж кондиционера включён в цену?</summary><p>Нет. Цена сплит-системы указана без монтажа. Монтаж, чистку, ремонт и заправку мы делаем отдельно.</p></details>
+  <details><summary>Можно ли оплатить картой?</summary><p>Да, оплата картой принимается.</p></details>
+  <details><summary>Где вы находитесь?</summary><p>В Михайловке (ул. Б. Хмельницкого, 1), в Даниловке (ул. Центральная, 20) и на станице Кумылженская (павильон «Мир дверей»).</p></details>
+ </div>
+</section>
+
+<section id="contacts">
+ <div class="wrap">
+  <h2 class="reveal">Контакты</h2>
+  <p class="sub reveal">Позвоните или напишите. Оставьте заявку, и мы перезвоним.</p>
+  <div class="contacts">
+   <div class="reveal">
+    <div class="phones">
+     <a href="tel:+79610643939">8-961-064-39-39</a>
+     <a href="tel:+78446327632">8 (84463) 2-76-32</a>
+    </div>
+    <div class="msgs">
+     <a href="#" id="maxbtn">MAX</a>
+     <a href="sms:+79610643939">SMS</a>
+    </div>
+    <p class="note hidden" id="maxhint">Номер 8-961-064-39-39 скопирован. Откройте MAX, нажмите «+» и «Найти по номеру», вставьте номер и напишите нам.</p>
+    <h3 style="margin:26px 0 12px">Наши адреса</h3>
+    <div class="addr"><span>г. Михайловка, ул. Б. Хмельницкого, 1</span><a target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=Михайловка, ул. Б. Хмельницкого, 1">Как доехать</a></div>
+    <div class="addr"><span>р.п. Даниловка, ул. Центральная, 20</span><a target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=Даниловка, ул. Центральная, 20">Как доехать</a></div>
+    <div class="addr"><span>ст. Кумылженская, павильон «Мир дверей»</span><a target="_blank" rel="noopener" href="https://yandex.ru/maps/?text=станица Кумылженская, Мир дверей">Как доехать</a></div>
+    <p class="note">Волгоградская область.</p>
+    <iframe title="Карта" style="width:100%;height:320px;border:0;border-radius:14px;margin-top:14px" loading="lazy" src="https://yandex.ru/map-widget/v1/?text=%D0%9C%D0%B8%D1%85%D0%B0%D0%B9%D0%BB%D0%BE%D0%B2%D0%BA%D0%B0%2C%20%D1%83%D0%BB.%20%D0%91.%20%D0%A5%D0%BC%D0%B5%D0%BB%D1%8C%D0%BD%D0%B8%D1%86%D0%BA%D0%BE%D0%B3%D0%BE%2C%201&z=15"></iframe>
+   </div>
+   <form id="form" class="reveal">
+    <h3>Оставить заявку</h3>
+    <label for="fname">Ваше имя</label>
+    <input id="fname" required placeholder="Как к вам обращаться">
+    <label for="fphone">Телефон</label>
+    <input id="fphone" required inputmode="tel" placeholder="+7 ___ ___ __ __">
+    <label for="fserv">Что интересует?</label>
+    <select id="fserv">
+     <option>Окна</option><option>Двери</option><option>Потолки</option><option>Сайдинг и утепление</option><option>Забор</option><option>Кондиционер</option><option>Другое</option>
+    </select>
+    <label for="faddr">Адрес замера</label>
+    <input id="faddr" required placeholder="Город, улица, дом, квартира">
+    <label for="fmsg">Комментарий</label>
+    <textarea id="fmsg" rows="3" placeholder="Размеры, пожелания"></textarea>
+    <button class="btn" type="submit">Отправить по SMS</button>
+    <a class="btn ghost" href="tel:+79610643939" style="width:100%;text-align:center;margin-top:10px">Или позвонить: 8-961-064-39-39</a>
+    <p class="msg-ok hidden" id="ok">Открылось сообщение с вашей заявкой. Нажмите «Отправить».</p>
+   </form>
+  </div>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="wrap">
+  <p>© Компания «Блик», Михайловка, Волгоградская область</p>
+  <p>ИП Хивинцева Анастасия Валерьевна, ИНН 343701521709</p>
+ </div>
+</footer>
+
+<div class="fab">
+ <button class="up" id="up" aria-label="Наверх">↑</button>
+ <a href="tel:+79610643939" aria-label="Позвонить">📞</a>
+</div>
+
+<script src="doors-data.js"></script>
+<script>
+const R = n => n.toLocaleString('ru-RU') + ' ₽';
+
+/* ===== каталог по листовкам ===== */
+const CAT = {
+ okna:{name:'Окна', note:'Москитная сетка в подарок. Стоимость монтажа уточняйте у менеджеров. В цену не включены подоконник и отлив.', items:[
+  {t:'Окно 1300×1400 мм',d:'Двустворчатое',p:11700},
+  {t:'Окно 2000×1400 мм',d:'Трёхстворчатое',p:16100},
+  {t:'Окно 700×1200 мм',d:'Открывается и откидывается',p:7200},
+  {t:'Окно 700×1200 мм',d:'Глухое',p:4000},
+  {t:'Балконная дверь 860×2050 мм',d:'Пластиковая',p:20000}]},
+ potolki:{name:'Потолки', note:'Световые линии, резные потолки, трековое освещение, многоуровневые, криволинейная спайка, фотопечать.', items:[
+  {t:'Натяжной потолок 8 м²',d:'Готовая цена',p:6400},
+  {t:'Натяжной потолок 12 м²',d:'Готовая цена',p:9600},
+  {t:'Натяжной потолок 16 м²',d:'Готовая цена',p:12800}]},
+ sayding:{name:'Сайдинг', note:'Цена указана под ключ: с материалами и работой.', items:[
+  {t:'Отделка сайдингом без утеплителя',d:'За 1 м²',p:2000,u:'за м²'},
+  {t:'Сайдинг с утеплителем 5 см',d:'За 1 м²',p:2500,u:'за м²'},
+  {t:'Сайдинг с утеплителем 10 см',d:'За 1 м²',p:3000,u:'за м²'}]},
+ zabory:{name:'Заборы', note:'Забор из профлиста под ключ. Профиль окрашенный.', items:[
+  {t:'Забор высотой 1,5 м',d:'Профлист окрашенный',p:3300,u:'за пог. м'},
+  {t:'Забор высотой 1,7 м',d:'Профлист окрашенный',p:3700,u:'за пог. м'}]},
+ split:{name:'Кондиционеры', note:'Цена указана без монтажа. Монтаж, чистка, ремонт и заправка — отдельно.', items:[
+  {t:'Сплит-система до 21 м²',d:'Без монтажа',p:15900},
+  {t:'Сплит-система до 27 м²',d:'Без монтажа',p:17900},
+  {t:'Сплит-система до 35 м²',d:'Без монтажа',p:22000}]},
+ extra:{name:'Сопутствующие', note:'Цены на эти услуги узнавайте по телефону.', items:[], list:[
+  'Рольставни','Рольворота','Секционные гаражные ворота','Жалюзи вертикальные','Жалюзи горизонтальные','Рулонные шторы','Откосы пластиковые','Откосы металлические','Москитные сетки за 1 день','Москитные сетки «Антикошки»','Москитные сетки с фотопечатью','Межкомнатные перегородки','Утепление домов']}
+};
+const tabs=document.getElementById('tabs'), list=document.getElementById('list'), tabnote=document.getElementById('tabnote');
+function show(key){
+  const c=CAT[key];
+  [...tabs.children].forEach(b=>b.classList.toggle('on',b.dataset.k===key));
+  list.innerHTML='';
+  c.items.forEach(i=>{
+    const el=document.createElement('div');el.className='item';
+    el.innerHTML=`<div><h4>${i.t}${i.tag?`<span class="tag">${i.tag}</span>`:''}</h4><div class="d">${i.d}</div></div>
+    <div class="pr">${R(i.p)} <small>${i.u||''}</small></div><button>Заказать</button>`;
+    el.querySelector('button').onclick=()=>{
+      document.getElementById('fmsg').value='Хочу заказать: '+i.t+' ('+R(i.p)+')';
+      document.getElementById('contacts').scrollIntoView();
+    };
+    list.appendChild(el);
+  });
+  if(c.list){
+    const ex=document.createElement('div');ex.className='extra';ex.style.gridColumn='1/-1';
+    ex.innerHTML='<b>Что ещё мы делаем:</b><ul>'+c.list.map(x=>'<li>'+x+'</li>').join('')+'</ul>';
+    list.appendChild(ex);
+  }
+  tabnote.textContent=c.note;
+}
+Object.entries(CAT).forEach(([k,c])=>{
+  const b=document.createElement('button');b.className='tab';b.textContent=c.name;b.dataset.k=k;
+  b.onclick=()=>show(k);tabs.appendChild(b);
+});
+show('okna');
+document.querySelectorAll('[data-tab]').forEach(a=>a.addEventListener('click',()=>show(a.dataset.tab)));
+
+/* ===== каталог дверей ===== */
+const D = window.DOORS || {metal:[],inter:[]};
+const dgrid=document.getElementById('dgrid'), dchips=document.getElementById('dchips'),
+      dq=document.getElementById('dq'), dsort=document.getElementById('dsort'),
+      dmore=document.getElementById('dmore'), dnote=document.getElementById('dnote');
+let dKind='metal', dFilter='', dShown=24, dList=[];
+const CHIPS={
+  metal:[['','Все'],['Металл + МДФ','Металл + МДФ'],['МДФ с двух сторон','МДФ с двух сторон'],['Металл','Металл'],['Терморазрыв','С терморазрывом'],['Противопожарные','Противопожарные']],
+  inter:[['','Все'],['glass','Со стеклом'],['solid','Глухие']]
+};
+function drawChips(){
+  dchips.innerHTML='';
+  CHIPS[dKind].forEach(([v,l])=>{
+    const b=document.createElement('button');b.className='chip'+(v===dFilter?' on':'');b.textContent=l;
+    b.onclick=()=>{dFilter=v;dShown=24;drawChips();drawDoors()};dchips.appendChild(b);
+  });
+}
+function drawDoors(){
+  const q=dq.value.trim().toLowerCase();
+  dList=D[dKind].filter(x=>(!dFilter||(dKind==='metal'?x.g===dFilter:x.t===dFilter))&&(!q||x.n.toLowerCase().includes(q)));
+  if(dsort.value) dList=[...dList].sort((a,b)=>(dsort.value==='asc'?1:-1)*((a.p||9e9)-(b.p||9e9)));
+  dgrid.innerHTML='';
+  dList.slice(0,dShown).forEach(x=>{
+    const el=document.createElement('div');el.className='dcard';
+    el.innerHTML=`<div class="ph"><img loading="lazy" alt="" src="${x.f}"></div><div class="in"><h4></h4><div class="pr">${x.p?R(x.p):'<small>Цену уточняйте у менеджера</small>'}</div></div>`;
+    el.querySelector('h4').textContent=x.n;
+    el.querySelector('img').alt=x.n;
+    el.onclick=()=>openDoor(x);
+    dgrid.appendChild(el);
+  });
+  if(!dList.length) dgrid.innerHTML='<p class="note">Ничего не найдено. Попробуйте другое слово.</p>';
+  dmore.classList.toggle('hidden',dList.length<=dShown);
+  dnote.textContent=dList.length+' шт. '+(dKind==='metal'?'Стоимость установки уточняйте у менеджеров.':'Цена указана за дверное полотно. Коробку и наличники уточняйте у менеджеров.');
+}
+function openDoor(x){
+  document.getElementById('mimg').src=x.f;document.getElementById('mimg').alt=x.n;
+  document.getElementById('mname').textContent=x.n;
+  document.getElementById('mprice').textContent=x.p?R(x.p):'Цену уточняйте у менеджера';
+  const ul=document.getElementById('mspecs');ul.innerHTML='';
+  (x.s||[]).forEach(s=>{const li=document.createElement('li');li.textContent=s;ul.appendChild(li)});
+  document.getElementById('mbuy').onclick=()=>{document.getElementById('fmsg').value='Интересует дверь: '+x.n+(x.p?' ('+R(x.p)+')':'');document.getElementById('fserv').value='Двери';closeDoor()};
+  document.getElementById('modal').classList.add('open');
+}
+function closeDoor(){document.getElementById('modal').classList.remove('open')}
+document.getElementById('mx').onclick=closeDoor;
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeDoor()});
+addEventListener('keydown',e=>{if(e.key==='Escape')closeDoor()});
+document.querySelectorAll('#dtabs .tab').forEach(b=>b.onclick=()=>{
+  dKind=b.dataset.k;dFilter='';dShown=24;
+  document.querySelectorAll('#dtabs .tab').forEach(t=>t.classList.toggle('on',t===b));
+  drawChips();drawDoors();
+});
+dq.addEventListener('input',()=>{dShown=24;drawDoors()});
+dsort.addEventListener('change',drawDoors);
+dmore.onclick=()=>{dShown+=24;drawDoors()};
+drawChips();drawDoors();
+
+/* ===== калькулятор ===== */
+const cf=document.getElementById('cfields'), ct=document.getElementById('ctype'),
+      csum=document.getElementById('csum'), chint=document.getElementById('chint');
+function num(id){return Math.max(0,parseFloat(document.getElementById(id).value)||0)}
+function drawCalc(){
+  const t=ct.value; let h='';
+  if(t==='okno'){
+    h=`<label>Окно 1300×1400 (11 700 ₽)</label><input id="n1" type="number" min="0" value="1">
+    <label>Окно 2000×1400 (16 100 ₽)</label><input id="n2" type="number" min="0" value="0">
+    <label>Окно 700×1200 открывающееся (7 200 ₽)</label><input id="n3" type="number" min="0" value="0">
+    <label>Окно 700×1200 глухое (4 000 ₽)</label><input id="n4" type="number" min="0" value="0">
+    <label>Балконная дверь 860×2050 (20 000 ₽)</label><input id="n5" type="number" min="0" value="0">
+    `;
+  }
+  if(t==='dver'){
+    const opt=a=>a.map((x,i)=>`<option value="${x.p||0}">${x.n.replace(/</g,'&lt;')}${x.p?' — '+R(x.p):' — цена по запросу'}</option>`).join('');
+    h=`<label>Металлические двери</label><select id="dm"><option value="0">Не нужна</option>${opt(D.metal)}</select>
+    <label>Сколько металлических</label><input id="dmn" type="number" min="0" value="1">
+    <label>Межкомнатные двери</label><select id="di"><option value="0">Не нужна</option>${opt(D.inter)}</select>
+    <label>Сколько межкомнатных</label><input id="din" type="number" min="0" value="1">`;
+  }
+  if(t==='potolok') h=`<label>Площадь потолка, м²</label><input id="a" type="number" min="0" value="12">`;
+  if(t==='sayding') h=`<label>Площадь стен, м²</label><input id="a" type="number" min="0" value="100">
+    <label>Вариант</label><select id="v"><option value="2000">Без утеплителя (2000 ₽/м²)</option><option value="2500">С утеплителем 5 см (2500 ₽/м²)</option><option value="3000">С утеплителем 10 см (3000 ₽/м²)</option></select>`;
+  if(t==='zabor') h=`<label>Длина забора, м</label><input id="a" type="number" min="0" value="30">
+    <label>Высота</label><select id="v"><option value="3300">1,5 м (3300 ₽/м)</option><option value="3700">1,7 м (3700 ₽/м)</option></select>`;
+  cf.innerHTML=h; cf.querySelectorAll('input,select').forEach(e=>e.addEventListener('input',calc)); calc();
+}
+function calc(){
+  const t=ct.value; let s=0,hint='';
+  if(t==='okno'){
+    [11700,16100,7200,4000,20000].forEach((p,i)=>{s+=num('n'+(i+1))*p});
+    hint='Монтаж не включён: его стоимость уточняйте у менеджеров. Подоконник и отлив не входят. Москитная сетка в подарок.';
+  }
+  if(t==='dver'){
+    s=(+document.getElementById('dm').value)*num('dmn')+(+document.getElementById('di').value)*num('din');
+    hint='Цена за дверное полотно. Установку, коробку и наличники уточняйте у менеджеров.';
+  }
+  if(t==='potolok'){s=num('a')*800;hint='Считаем по 800 ₽ за м². Это цена из прайса: 8 м² стоит 6400 ₽, 12 м² — 9600 ₽, 16 м² — 12 800 ₽. Для других размеров цену уточнит менеджер.'}
+  if(t==='sayding'){s=num('a')*num('v');hint='Цена под ключ: материалы и работа.'}
+  if(t==='zabor'){s=num('a')*num('v');hint='Забор из окрашенного профлиста под ключ.'}
+  csum.textContent=R(Math.round(s)); chint.textContent=hint;
+}
+ct.addEventListener('change',drawCalc); drawCalc();
+document.getElementById('cgo').addEventListener('click',()=>{
+  document.getElementById('fmsg').value='Хочу заказать расчёт. Предварительно в калькуляторе: '+csum.textContent+' ('+ct.options[ct.selectedIndex].text+')';
+});
+
+/* ===== MAX: копируем номер ===== */
+document.getElementById('maxbtn').addEventListener('click',e=>{
+  e.preventDefault();
+  try{navigator.clipboard.writeText('89610643939')}catch(err){}
+  document.getElementById('maxhint').classList.remove('hidden');
+});
+
+/* ===== форма: отправка по SMS ===== */
+document.getElementById('form').addEventListener('submit',e=>{
+  e.preventDefault();
+  const txt='Заявка на замер.\nИмя: '+fname.value+'\nТелефон: '+fphone.value+
+    '\nИнтересует: '+fserv.value+'\nАдрес: '+faddr.value+'\nКомментарий: '+fmsg.value;
+  location.href='sms:+79610643939?body='+encodeURIComponent(txt);
+  document.getElementById('ok').classList.remove('hidden');
+});
+
+/* ===== меню, кнопка вверх, появление ===== */
+const menu=document.getElementById('menu');
+document.getElementById('burger').onclick=()=>menu.classList.toggle('open');
+menu.querySelectorAll('a').forEach(a=>a.onclick=()=>menu.classList.remove('open'));
+const up=document.getElementById('up');
+up.onclick=()=>window.scrollTo({top:0,behavior:'smooth'});
+addEventListener('scroll',()=>up.classList.toggle('show',scrollY>500));
+const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
